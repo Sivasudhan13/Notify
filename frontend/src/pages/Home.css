@@ -1,0 +1,32 @@
+/* Moving Grid */
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 80px 80px;
+  }
+}
+.animate-grid {
+  animation: moveGrid 12s linear infinite;
+}
+
+/* Animated Gradient Background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(-45deg, #9d31f1, #6d00ff, #f9f2ff, #d8b4fe);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  z-index: 0;
+}

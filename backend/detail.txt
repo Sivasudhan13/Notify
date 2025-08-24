@@ -1,0 +1,12 @@
+MONGO_URI=mongodb+srv://sivasudhan87:7xwININEjbtosbj5@cluster0.1gfl1va.mongodb.net/notesApp?retryWrites=true&w=majority&appName=Cluster0
+PORT=5000
+fyUdpil6ySo5eIJX
+sivasudhan87
+fyUdpil6ySo5eIJX
+
+mongodb+srv://sivasudhan87:fyUdpil6ySo5eIJX@cluster0.by2hc7k.mongodb.net/db_notes?retryWrites=true&w=majority&appName=Cluster0
+
+sivasudhan87
+TgrlcxIXeoI83k2J
+
+mongodb+srv://sivasudhan87:TgrlcxIXeoI83k2J@cluster0.fhbk4xs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
