@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Fixed import
+import { Link } from "react-router-dom";
 import api from "../lib/axios";
 import { toast } from "react-hot-toast";
 
@@ -22,34 +22,40 @@ const NoteCard = ({ note, setNotes }) => {
   return (
     <div
       key={note._id}
-      className="rounded-2xl shadow-lg p-5 bg-[#9d31f1] border border-[#f9f2ff]/30 flex flex-col justify-between"
+      className="rounded-xl shadow-md hover:shadow-lg transition-all bg-white border border-gray-200 p-4 flex flex-col"
     >
+      {/* Title */}
       <Link to={`/note/${note._id}`}>
-        <h3 className="text-xl font-bold text-[#f9f2ff] mb-2 hover:underline">
+        <h3 className="text-xl font-bold text-gray-800 mb-2 hover:underline">
           {note.title}
         </h3>
       </Link>
 
-      <p className="text-[#f9f2ff]/90 flex-1 mb-3">{note.content}</p>
+      {/* Content */}
+      <p className="text-gray-700 text-sm flex-1 mb-3 line-clamp-3">
+        {note.content}
+      </p>
 
-      <div className="text-sm text-[#f9f2ff]/70 mb-3">
-        <p>Created: {new Date(note.createdAt).toLocaleString()}</p>
+      {/* Dates */}
+      <div className="text-xs text-gray-500 mb-4">
+        <p>🕒 Created: {new Date(note.createdAt).toLocaleString()}</p>
         {note.updatedAt && (
-          <p>Updated: {new Date(note.updatedAt).toLocaleString()}</p>
+          <p>✏️ Updated: {new Date(note.updatedAt).toLocaleString()}</p>
         )}
       </div>
 
-      <div className="mt-2 flex justify-end space-x-3">
+      {/* Buttons */}
+      <div className="flex justify-end gap-2">
         <Link to={`/note/${note._id}`}>
-          <button className="px-4 py-2 rounded-xl bg-[#f9f2ff] text-[#9d31f1] font-semibold hover:bg-white transition">
-            Edit
+          <button className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition">
+            ✏️ Edit
           </button>
         </Link>
         <button
-          className="px-4 py-2 rounded-xl bg-red-500 text-white font-semibold hover:bg-red-600 transition"
+          className="px-4 py-2 rounded-lg bg-red-500 text-white text-sm font-medium hover:bg-red-600 transition"
           onClick={(e) => handleDelete(e, note._id)}
         >
-          Delete
+          🗑 Delete
         </button>
       </div>
     </div>
